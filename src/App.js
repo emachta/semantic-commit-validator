@@ -13,6 +13,7 @@ function App() {
   const [validationResult, setValidationResult] = useState(null);
   const [showAbout, setShowAbout] = useState(false);
   
+  
   const firstLineLength = commitMessage.split('\n')[0].length;
 
   // Types that MUST be used in specific scenarios
@@ -188,6 +189,11 @@ function App() {
     }}>
       <Helmet>
         <title>Semantic Commit Validator | Conventional Commits Linter</title>
+        <meta name="description" content="Free online tool to validate and lint git commit messages according to conventional commits specification. Check your commit messages for proper formatting and conventions." />
+        <meta name="keywords" content="git commit validator, conventional commits, semantic versioning, commit message linter, git tools" />
+        <meta property="og:title" content="Semantic Commit Validator" />
+        <meta property="og:description" content="Validate your git commit messages against conventional commits specification" />
+        <meta property="og:type" content="website" />
       </Helmet>
 
       <h1 style={{
@@ -225,6 +231,24 @@ function App() {
         </ul>
       </div>
 
+      <div style={{
+        marginBottom: '2rem',
+        padding: '1rem',
+        backgroundColor: '#f7fafc',
+        borderRadius: '8px',
+        fontSize: '0.9rem',
+        color: '#4a5568'
+      }}>
+        <h2 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#2d3748' }}>
+          Example Messages:
+        </h2>
+        <ul style={{ listStyle: 'none', padding: 0 }}>
+          <li style={{ marginBottom: '0.5rem', fontFamily: 'monospace' }}>feat(auth): add OAuth2 login support</li>
+          <li style={{ marginBottom: '0.5rem', fontFamily: 'monospace' }}>fix(api): resolve rate limiting issue</li>
+          <li style={{ marginBottom: '0.5rem', fontFamily: 'monospace' }}>feat!: redesign user interface</li>
+          <li style={{ marginBottom: '0.5rem', fontFamily: 'monospace' }}>docs(readme): update installation steps</li>
+        </ul>
+      </div>
       <form onSubmit={validateCommit}>
         <div>
           <textarea
@@ -334,52 +358,115 @@ function App() {
         padding: '1rem',
         borderTop: '1px solid #e2e8f0',
         color: '#718096',
-        fontSize: '0.9rem',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center'
+        fontSize: '0.9rem'
       }}>
-        <p>
-          Related searches: commit linter, git commit validator, conventional commits checker, 
-          semantic version validator, commit message format checker
-        </p>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <a
-            href="https://ko-fi.com/ennismachta"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => {
-              amplitude.track('Ko-fi Click');
-            }}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              backgroundColor: '#29abe0',
-              color: 'white',
-              padding: '0.5rem 1rem',
-              borderRadius: '6px',
-              textDecoration: 'none',
-              fontSize: '0.9rem',
-              fontWeight: '600',
-              transition: 'transform 0.2s',
-              border: 'none'
-            }}
-            onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
-            onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-          >
-            <span style={{ marginRight: '0.5rem' }}>☕</span>
-            Support on Ko-fi
-          </a>
-          <a 
-            href="#about"
-            onClick={toggleAbout}
-            style={{
-              color: '#4299e1',
-              textDecoration: 'none'
-            }}
-          >
-            About
-          </a>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBottom: '1rem'
+        }}>
+          <p>
+            Related searches: commit linter, git commit validator, conventional commits checker, 
+            semantic version validator, commit message format checker
+          </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <a
+              href="https://github.com/emachta/semantic-commit-validator"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                amplitude.track('GitHub Link Click', { location: 'footer' });
+              }}
+              style={{
+                color: '#4299e1',
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.25rem'
+              }}
+            >
+              <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+              </svg>
+              GitHub
+            </a>
+            <a
+              href="https://ko-fi.com/ennismachta"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                amplitude.track('Ko-fi Click');
+              }}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                backgroundColor: '#29abe0',
+                color: 'white',
+                padding: '0.5rem 1rem',
+                borderRadius: '6px',
+                textDecoration: 'none',
+                fontSize: '0.9rem',
+                fontWeight: '600',
+                transition: 'transform 0.2s',
+                border: 'none'
+              }}
+              onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+              onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+            >
+              <span style={{ marginRight: '0.5rem' }}>☕</span>
+              Support on Ko-fi
+            </a>
+            <a 
+              href="#about"
+              onClick={toggleAbout}
+              style={{
+                color: '#4299e1',
+                textDecoration: 'none'
+              }}
+            >
+              About
+            </a>
+          </div>
+        </div>
+        <div style={{
+          backgroundColor: '#EBF8FF',
+          borderRadius: '6px',
+          padding: '0.75rem',
+          color: '#2B6CB0',
+          fontSize: '0.9rem',
+          textAlign: 'center'
+        }}>
+          <p>
+            💡 Have feedback or found a bug? Please 
+            <a
+              href="https://github.com/emachta/semantic-commit-validator/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => amplitude.track('GitHub Issues Click')}
+              style={{
+                color: '#4299E1',
+                textDecoration: 'none',
+                marginLeft: '0.25rem'
+              }}
+            >
+              open an issue
+            </a>
+            {' '}or{' '}
+            <a
+              href="https://github.com/emachta/semantic-commit-validator/pulls"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => amplitude.track('GitHub PRs Click')}
+              style={{
+                color: '#4299E1',
+                textDecoration: 'none'
+              }}
+            >
+              submit a pull request
+            </a>
+            {' '}on GitHub.
+          </p>
         </div>
       </footer>
       
