@@ -1,71 +1,73 @@
-# Getting Started with Create React App
+# Semantic Commit Validator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A free online tool to validate and lint git commit messages according to the [Conventional Commits](https://www.conventionalcommits.org/) specification.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- Real-time commit message validation
+- Detailed error messages and suggestions
+- SemVer impact analysis
+- Support for breaking changes
+- Scope validation
+- Character length checking
+- Body and footer validation
 
-### `npm start`
+## 🎯 Use Cases
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Validate commit messages before pushing
+- Learn conventional commits format
+- Ensure team consistency in commit messages
+- Understand SemVer impact of your changes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📋 Supported Commit Types
 
-### `npm test`
+### Required Types
+- `feat`: A new feature (MINOR in SemVer)
+- `fix`: A bug fix (PATCH in SemVer)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Optional Types
+- `docs`: Documentation changes
+- `style`: Code style changes
+- `refactor`: Code refactoring
+- `perf`: Performance improvements
+- `test`: Test updates
+- `build`: Build system changes
+- `ci`: CI configuration changes
+- `chore`: Maintenance tasks
+- `revert`: Revert previous changes
 
-### `npm run build`
+## 🔍 Validation Rules
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Commit messages must start with a type and description
+2. First line must not exceed 100 characters
+3. Body must begin with a blank line
+4. Breaking changes must be marked with `!` or `BREAKING CHANGE`
+5. Scope must be a valid identifier
+6. Footer must follow the conventional format
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 💻 Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React
+- conventional-commits-parser
+- Pure CSS (no external dependencies)
 
-### `npm run eject`
+## 🤖 Built with AI
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This tool was created through a collaboration between human and artificial intelligence, using GitHub Copilot and ChatGPT for rapid development and refinement.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🌟 Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Contributions are welcome! Feel free to:
+1. Report bugs
+2. Suggest new features
+3. Submit pull requests
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ☕ Support
 
-## Learn More
+If you find this tool helpful, consider supporting the development:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/ennismachta)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📜 License
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# semantic-commit-validator
+MIT License - feel free to use this tool in your projects.
